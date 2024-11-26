@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { ControleLivros } from "./ControleLivros";
-import { ControleEditora } from "./ControleEditora";
+import { ControleLivros }  from "./controle/ControleLivros";
+import { ControleEditora } from "./controle/ControleEditora";
 
 const controleLivro = new ControleLivros();
 const controleEditora = new ControleEditora();
@@ -40,7 +40,7 @@ const LivroLista = () => {
     const excluir = (codigo) => {
         controleLivro.excluir(codigo);
         setLivros(livros.filter(livro => livro.codigo !== codigo));
-        setCarregado(false);  // Força o redesenho
+        setCarregado(false);  // Para reforçar o redesenho da página
     };
 
     return (
